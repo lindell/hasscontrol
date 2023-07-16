@@ -23,5 +23,5 @@ jobs:
       run: |
         wget https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-4.1.4-2022-06-07-f86da2dee.zip
         unzip connectiq-sdk-lin-4.1.4-2022-06-07-f86da2dee.zip
-        echo "sdk.location=$(pwd)/connectiq-sdk-lin-4.1.4-2022-06-07-f86da2dee" > local.properties
-        ./connectiq-sdk-lin-4.1.4-2022-06-07-f86da2dee/bin/monkeyc -y developer_key.der -f monkey.jungle -o output.prg
+        echo "sdk.location=$(pwd)" > local.properties
+        ./bin/monkeyc -y developer_key.der -f monkey.jungle -o output.prg
