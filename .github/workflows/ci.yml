@@ -22,9 +22,10 @@ jobs:
 
     - name: Build with Monkey C
       run: |
-        wget https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-4.1.4-2022-06-07-f86da2dee.zip
-        unzip connectiq-sdk-lin-4.1.4-2022-06-07-f86da2dee.zip
+        wget https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-6.2.1-2023-06-26-124cb49c5.zip
+        unzip connectiq-sdk-lin-6.2.1-2023-06-26-124cb49c5.zip
         echo "sdk.location=$(pwd)" > local.properties
         export PATH=$PATH:$(pwd)/bin
         cd widget
         monkeyc -y ../developer_key.der -f monkey.jungle -o output.prg
+
