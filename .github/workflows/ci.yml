@@ -27,4 +27,4 @@ jobs:
         echo "sdk.location=$(pwd)" > local.properties
         export PATH=$PATH:$(pwd)/bin
         cd widget
-        monkeyc -y developer_key.der -f monkey.jungle -o output.prg
+        monkeyc -y ../developer_key.der -f monkey.jungle -o output.prg
