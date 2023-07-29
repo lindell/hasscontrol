@@ -78,10 +78,10 @@ module Hass {
       if (state == STATE_CLOSED) {
         return false;
       }
-      if (state == STATE_LOCKED) {
+      if (state == STATE_UNLOCKED) {
         return true;
       }
-      if (state == STATE_UNLOCKED) {
+      if (state == STATE_LOCKED) {
         return false;
       }
 
