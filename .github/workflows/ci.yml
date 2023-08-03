@@ -16,10 +16,14 @@ jobs:
         java-version: 1.8
 
     - name: Get devices
+      shell: bash
+      env:
+        GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
+        GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
       run: |
-        cd ~
-        wget https://hatl.at/devices.zip
-        unzip -qq devices.zip
+        curl -s https://raw.githubusercontent.com/lindell/connect-iq-manager/master/install.sh | sh
+        connect-iq-manager login
+        connect-iq-manager download
 
     - name: Get SDK
       run: |
