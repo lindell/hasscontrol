@@ -24,7 +24,7 @@ jobs:
         connect-iq-sdk-manager login
 
     - name: Download devices
-      run:  connect-iq-manager download --manifest=widget/manifest.xml
+      run:  connect-iq-sdk-manager download --manifest=widget/manifest.xml
 
     - name: Get SDK
       run: |
