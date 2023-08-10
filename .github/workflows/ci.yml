@@ -15,15 +15,16 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: Get devices
-      shell: bash
+    - name: Setup connect-iq-sdk-manager-cli
       env:
         GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
         GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
       run: |
-        curl -s https://raw.githubusercontent.com/lindell/connect-iq-manager/master/install.sh | sh
-        connect-iq-manager login
-        connect-iq-manager download
+        curl -s https://raw.githubusercontent.com/lindell/connect-iq-sdk-manager-cli/master/install.sh | sh
+        connect-iq-sdk-manager login
+
+    - name: Download devices
+      run:  connect-iq-manager download --manifest=widget/manifest.xml
 
     - name: Get SDK
       run: |
